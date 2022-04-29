@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import MapView from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
+import { location } from "../Data/Data";
 
 export default function DefaultMap() {
     return (
@@ -10,12 +11,20 @@ export default function DefaultMap() {
                 style={styles.map}
                 //specify our coordinates.
                 initialRegion={{
-                    latitude: 24.83073230,
-                    longitude: 67.101,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421,
+                    latitude: 37.78825,
+                    longitude: -122.4324,
+                    latitudeDelta: 0.015,
+                    longitudeDelta: 0.0121,
                 }}
             />
+            {
+                location.map(marker=>(
+                    <Marker
+                    coordinate={{latitude:marker.latitude,
+                    longitude:marker.longitude}}
+                    title={marker.title}/>
+                ))
+            }
         </View>
     );
 }
