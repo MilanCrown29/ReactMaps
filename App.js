@@ -5,6 +5,7 @@ import CustomMarker from './src/CustomMarker';
 
 import DefaultMap from './src/DefaultMap';
 import MapHook from './src/MapHook';
+import PolygonMapTesting from './src/PolygonMapTesting';
 import PolylineMap from './src/PolylineMap';
 
 export default function App() {
@@ -15,5 +16,6 @@ export default function App() {
   //<PolylineMap/>
   //<CustomMarker item={marker}/>
   <CircleMapTesting/>
+  //<PolygonMapTesting/>
   );
 }

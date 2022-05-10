@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
-import MapView, { Polygon} from 'react-native-maps';
-import {location} from '../Data/Data';
+import {StyleSheet, View, } from 'react-native';
+import MapView, {Polygon} from 'react-native-maps';
+
 
 export default function PolygonMapTesting() {
   return (
@@ -9,19 +9,24 @@ export default function PolygonMapTesting() {
       <MapView
         style={styles.map}
         initialRegion={{
-          latitude: 24.8307320,
-          longitude: 67.10113298,
+          latitude: 26.453304314451437,
+          longitude: 80.32602046007791,
           latitudeDelta: 0.0992,
           longitudeDelta: 0.0421,
         }}
-      />
-      {location.map(marker => {
+        onRegion={{
+          latitude: 26.453304314451437,
+          longitude: 80.32602046007791,
+          latitudeDelta: 0.0992,
+          longitudeDelta: 0.0421,
+        }}>
         <Polygon
-          center={{latitude: marker.latitude, longitude: marker.longitude}}
-          radius={550}
-          fillcolor={'#A3BE80'}
-        />;
-      })}
+          center={{latitude: 26.453304314451437, longitude: 80.32602046007791}}
+          title="I am Polygon"
+          strokeWidth={3}
+        />
+        ;
+      </MapView>
     </View>
   );
 }
